@@ -119,7 +119,4 @@ async def about_handler(bot, message):
                 [
                     [InlineKeyboardButton("✢ 𝐎𝐰𝐧𝐞𝐫 ✢", url="https://t.me/Farooq_is_KING"), InlineKeyboardButton("✜ 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜", url="https://t.me/Opleech")],
                     [InlineKeyboardButton("✜ 𝐃𝐞𝐩𝐥𝐨𝐲 𝐆𝐨 ✜", url="https://telegra.ph/WOODcraft-Upi-10-19"), InlineKeyboardButton("✜ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✜", url="https://t.me/WD_Topic_Group")],
-                ]
-            ),
-
-        )
+                )

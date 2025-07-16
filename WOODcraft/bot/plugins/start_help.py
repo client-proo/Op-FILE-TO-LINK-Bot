@@ -29,6 +29,7 @@ async def start(b, m):
             text="**ʜᴇʟʟᴏ...🤍\n\n❍⊱≕≻ ɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**❍⊱≕≻ ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛAɪʟs\n\n❍⊱≕≻ sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ**", 
                 )
        
+
     else:
 
         get_msg = await b.get_messages(chat_id=Var.BIN_CHANNEL, ids=int(usr_cmd))

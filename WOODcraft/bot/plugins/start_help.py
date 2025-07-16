@@ -1,4 +1,4 @@
-#WOODcraft goel
+# WOODcraft goel
 from WOODcraft.bot import AngelBot
 from WOODcraft.vars import Var
 import logging
@@ -13,7 +13,7 @@ from WOODcraft.utils.file_properties import get_name, get_hash, get_media_file_s
 db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
-                      
+
 @AngelBot.on_message(filters.command('start') & filters.private)
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
@@ -24,16 +24,11 @@ async def start(b, m):
         )
     usr_cmd = m.text.split("_")[-1]
     if usr_cmd == "/start":
-       
-            caption="**🌟سلام {user_name} عزیز خوش اومدی!🌟\n\nبرای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.**",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                   [InlineKeyboardButton("✢ 𝐎𝐰𝐧𝐞𝐫 ✢", url="https://t.me/Farooq_is_KING"), InlineKeyboardButton("✜ 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜", url="https://t.me/Opleech")],
-                    [InlineKeyboardButton("✜ 𝐃𝐞𝐩𝐥𝐨𝐲 𝐆𝐨 ✜", url="https://www.buymeacoffee.com/woodcraftop"), InlineKeyboardButton("✜ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✜", url="https://t.me/WD_Topic_Group")],
-                ]
-            ),
-            
+
+        await m.reply_text(
+            text=f"**🌟سلام {m.from_user.first_name} عزیز خوش اومدی!🌟\n\nبرای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.**"
         )
+
     else:
 
         get_msg = await b.get_messages(chat_id=Var.BIN_CHANNEL, ids=int(usr_cmd))
@@ -61,12 +56,9 @@ async def start(b, m):
 
         msg_text = "**ᴛᴏᴜʀ ʟɪɴᴋ ɪs ɢᴇɴᴇʀᴀᴛᴇᴅ...⚡\n\n📧 ғɪʟᴇ ɴᴀᴍᴇ :-\n{}\n {}\n\n💌 ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ :- {}\n\n♻️ ᴛʜɪs ʟɪɴᴋ ɪs ᴘᴇʀᴍᴀɴᴇɴᴛ ᴀɴᴅ ᴡᴏɴ'ᴛ ɢᴇᴛ ᴇxᴘɪʀᴇᴅ ♻️\n\n<b>❖ YouTube.com/@Woodcraft5</b>**"
         await m.reply_text(            
-            text=msg_text.format(file_name, file_size, stream_link),
-            
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⚡ ᴅᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ ⚡", url=stream_link)]])
-        
-          
+            text=msg_text.format(file_name, file_size, stream_link)
         )
+
 
 @AngelBot.on_message(filters.command('about') & filters.private)
 async def about_handler(bot, message):
@@ -76,4 +68,3 @@ async def about_handler(bot, message):
             Var.BIN_CHANNEL,
             f"#NEW_USER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) Started !!"
         )
-    

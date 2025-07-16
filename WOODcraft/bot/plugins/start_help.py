@@ -24,8 +24,8 @@ async def start(b, m):
         )
     usr_cmd = m.text.split("_")[-1]
     if usr_cmd == "/start":
-        await m.reply_photo(
-            photo="https://graph.org/file/948fc22cf79a6d0a4d210.jpg",
+        await m.reply_text(
+            
             caption="**💐 ʜᴇʟʟᴏ...🤍\n\n❍⊱≕≻ ɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**❍⊱≕≻ ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛAɪʟs\n\n❍⊱≕≻ sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ...**",
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -97,7 +97,28 @@ async def about_handler(bot, message):
         await db.add_user(message.from_user.id)
         await bot.send_message(
             Var.BIN_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) Started !!")],
+            f"#NEW_USER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) Started !!"
+        )
+    await message.reply_photo(
+            photo="https://graph.org/file/948fc22cf79a6d0a4d210.jpg",
+            caption="""<b>🤖 My Details 🦋<a href='https://t.me/TG_Files_Link_v1_bot'>Click Here</a></b>
+
+<b>🌺━━━━━━━⫷ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏᴛ ⫸</b>
+┃
+┃❍⊱≕≻<b>𝐒𝐞𝐫𝐯𝐞𝐫 ◉ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ
+┣≕≻<b>𝐁𝐨𝐨𝐬𝐭 𝐇𝐞𝐫𝐞 𝐏𝐥𝐳 ◉ <a href='https://t.me/Opleech?boost'>Please 🥺</a></b>
+┃❍⊱≕≻<b>𝐅𝐨𝐥𝐥𝐨𝐰 𝐌𝐞 ◉ <a href='https://t.me/Farooq_is_KING'>Click Here</a></b>
+┣⪼<b>𝐒𝐞𝐫𝐯𝐞𝐫 ◉ ʜᴇʀᴜᴋᴏ</b>
+┃❍⊱≕≻<b>𝐋𝐢𝐛𝐫𝐚𝐫𝐲 ◉ ᴘʏʀᴏɢʀᴀᴍ</b>
+┣≕≻<b>𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 ◉ ᴘʏᴛʜᴏɴ 3</b>
+┃
+<b>🌺━━━━━━━❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™</b>""",
+
+
+        reply_markup=InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton("✢ 𝐎𝐰𝐧𝐞𝐫 ✢", url="https://t.me/Farooq_is_KING"), InlineKeyboardButton("✜ 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜", url="https://t.me/Opleech")],
+                    [InlineKeyboardButton("✜ 𝐃𝐞𝐩𝐥𝐨𝐲 𝐆𝐨 ✜", url="https://telegra.ph/WOODcraft-Upi-10-19"), InlineKeyboardButton("✜ 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 ✜", url="https://t.me/WD_Topic_Group")],
                 ]
             ),
 

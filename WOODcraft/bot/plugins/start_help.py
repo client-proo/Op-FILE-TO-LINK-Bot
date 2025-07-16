@@ -26,7 +26,7 @@ async def start(b, m):
     if usr_cmd == "/start":
         await m.reply_text(
 
-            text="**🌟 سلام {user_name} عزیز، خوش اومدی🌟/n/n🔗 برای دریافت لینک دانلود مستقیم، فایل مورد نظر رو واسه ربات فوروارد کن**", 
+            text="**🌟 سلام ** [{m.from_user.first_name}](tg://user?id={m.from_user.id})\n** عزیز، خوش اومدی🌟/n/n🔗 برای دریافت لینک دانلود مستقیم، فایل مورد نظر رو واسه ربات فوروارد کن**", 
                 )
        
 

@@ -14,57 +14,14 @@ db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
 
 
-@AngelBot.on_message(filters.command('start') & filters.private)
-async def start(b, m):
-    if not await db.is_user_exist(m.from_user.id):
-        await db.add_user(m.from_user.id)
-        await b.send_message(
-            Var.BIN_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Started !!"
+@StreamBot.on_message(filters.command(["start", "help"]) & filters.private)
+async def start(_, m: Message):
+    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
+        return await m.reply(
+            "You are not in the allowed list of users who can use me. \
+            Check <a href='https://github.com/EverythingSuckz/TG-FileStreamBot#optional-vars'>this link</a> for more info.",
+            disable_web_page_preview=True, quote=True
         )
-    usr_cmd = m.text.split("_")[-1]
-    if usr_cmd == "/start":
-
-        await m.reply_text(
-            text=f"**🌟سلام {m.from_user.first_name} عزیز خوش اومدی!🌟\n\nبرای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.**"
-        )
-
-    else:
-
-        get_msg = await b.get_messages(chat_id=Var.BIN_CHANNEL, ids=int(usr_cmd))
-
-        file_size = None
-        if get_msg.video:
-            file_size = f"{humanbytes(get_msg.video.file_size)}"
-        elif get_msg.document:
-            file_size = f"{humanbytes(get_msg.document.file_size)}"
-        elif get_msg.audio:
-            file_size = f"{humanbytes(get_msg.audio.file_size)}"
-
-        file_name = None
-        if get_msg.video:
-            file_name = f"{get_msg.video.file_name}"
-        elif get_msg.document:
-            file_name = f"{get_msg.document.file_name}"
-        elif get_msg.audio:
-            file_name = f"{get_msg.audio.file_name}"
-
-        stream_link = "https://{}/{}".format(Var.FQDN, get_msg.id) if Var.ON_HEROKU or Var.NO_PORT else \
-            "http://{}:{}/{}".format(Var.FQDN,
-                                     Var.PORT,
-                                     get_msg.id)
-
-        msg_text = "**ᴛᴏᴜʀ ʟɪɴᴋ ɪs ɢᴇɴᴇʀᴀᴛᴇᴅ...⚡\n\n📧 ғɪʟᴇ ɴᴀᴍᴇ :-\n{}\n {}\n\n💌 ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ :- {}\n\n♻️ ᴛʜɪs ʟɪɴᴋ ɪs ᴘᴇʀᴍᴀɴᴇɴᴛ ᴀɴᴅ ᴡᴏɴ'ᴛ ɢᴇᴛ ᴇxᴘɪʀᴇᴅ ♻️\n\n<b>❖ YouTube.com/@Woodcraft5</b>**"
-        await m.reply_text(            
-            text=msg_text.format(file_name, file_size, stream_link)
-        )
-
-
-@AngelBot.on_message(filters.command('about') & filters.private)
-async def about_handler(bot, message):
-    if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(message.from_user.id)
-        await bot.send_message(
-            Var.BIN_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) Started !!"
-        )
+    await m.reply(
+        f'سلام {m.from_user.mention(style="md")}, برای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.'
+    )

@@ -16,8 +16,8 @@ async def start(b, m):
         )
     usr_cmd = m.text.split("_")[-1]
     if usr_cmd == "/start":
-        
-            caption="**💐 ʜᴇʟʟᴏ...🤍\n\n❍⊱≕≻ ɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**❍⊱≕≻ ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛAɪʟs\n\n❍⊱≕≻ sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ...**",
+    await m.reply_text(
+        "**💐 ʜᴇʟʟᴏ...🤍\n\n❍⊱≕≻ ɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**❍⊱≕≻ ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛAɪʟs\n\n❍⊱≕≻ sᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ...**",
             reply_markup=InlineKeyboardMarkup(
                 [
                    [InlineKeyboardButton("✢ 𝐎𝐰𝐧𝐞𝐫 ✢", url="https://t.me/Farooq_is_KING"), InlineKeyboardButton("✜ 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜", url="https://t.me/Opleech")],

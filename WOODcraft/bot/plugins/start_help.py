@@ -26,7 +26,7 @@ async def start(b, m):
     if usr_cmd == "/start":
         await m.reply_text(
 
-            text="**🌟 سلام ** [{m.from_user.mention(style="md")}\n** عزیز، خوش اومدی🌟/n/n🔗 برای دریافت لینک دانلود مستقیم، فایل مورد نظر رو واسه ربات فوروارد کن**", 
+            text=f"**🌟 سلام  [{m.from_user.mention(style="md")}\nعزیز، خوش اومدی🌟/n/n🔗 برای دریافت لینک دانلود مستقیم، فایل مورد نظر رو واسه ربات فوروارد کن**", 
                 )
        
 

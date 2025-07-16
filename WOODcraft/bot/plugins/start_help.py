@@ -25,7 +25,7 @@ async def start(b, m):
     usr_cmd = m.text.split("_")[-1]
     if usr_cmd == "/start":
        
-            caption="**🌟 سلام {user_name} عزیز خوش اومدی!🌟 \n\nبرای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.**",
+            caption="**🌟سلام {user_name} عزیز خوش اومدی!🌟\n\nبرای دریافت لینک دانلود مستقیم فایل مورد نظر خود را ارسال کنید.**",
             reply_markup=InlineKeyboardMarkup(
                 [
                    [InlineKeyboardButton("✢ 𝐎𝐰𝐧𝐞𝐫 ✢", url="https://t.me/Farooq_is_KING"), InlineKeyboardButton("✜ 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜", url="https://t.me/Opleech")],
